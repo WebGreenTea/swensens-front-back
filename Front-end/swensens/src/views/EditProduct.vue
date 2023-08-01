@@ -4,7 +4,7 @@
     <router-link to="/products"><button>Back to list of Products Page</button></router-link>
     <form style="margin-top: 50px;" v-on:submit.prevent="updateProduct()">
         <div style="display: flex; justify-content: center;">
-            <h2>Add New Product</h2>
+            <h2>Edit Product</h2>
         </div>
         <div style="display: flex; justify-content: center;">
             <label for="title" style="margin-right: 4px;">Product Name</label>
