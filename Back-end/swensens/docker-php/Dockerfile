@@ -10,24 +10,26 @@ RUN apt-get update \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libxslt1-dev \
+    libzip-dev \
     openssh-server \
     openssh-client \
-    rsync
+    rsync \
+    zip \
+    unzip 
 
 # RUN docker-php-ext-configure \
 #   gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
 
 # # ตามด้วยคำสั่งสำหรับการลง php extension ครับ
-RUN docker-php-ext-install pdo_mysql
-#   bcmath \
-#   gd \
-#   intl \
-#   mbstring \
-#   mcrypt \
-#   pdo_mysql \
-#   soap \
-#   xsl \
-#   zip
+RUN docker-php-ext-install pdo_mysql \
+  bcmath \
+  gd \
+  intl \
+  # mbstring 
+  # mcrypt 
+  soap \
+  xsl \
+  zip
 
 # อันนี้ลงเพิ่มเติมคือ composer นั้นเอง เป็นตัว package manager สำหรับการจัดการพวก dependency ของภาษา php ครับ
 RUN curl -sS https://getcomposer.org/installer | \
